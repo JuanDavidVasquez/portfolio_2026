@@ -1,0 +1,1 @@
+import{_ as o,y as n,A as t,z as s}from"./VsN8G4vz.js";const a={};function r(l,e){return s(),n("div",null,[...e[0]||(e[0]=[t("h1",null,"About Me",-1),t("p",null,"This is the about page.",-1)])])}const u=o(a,[["render",r]]);export{u as default};
