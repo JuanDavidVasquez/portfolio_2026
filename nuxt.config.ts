@@ -1,36 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
-  ssr: true, 
-  
-  // Configuración para mejorar la detección de carga
-  experimental: {
-    payloadExtraction: false 
+  ssr: false,
+
+  app: {
+    baseURL: '/portfolio_2026/',
+    buildAssetsDir: '/assets/'
   },
+
 
   css: [
     '@/assets/main.scss',
   ],
 
   modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/scripts'
   ],
 
-  // Configuración adicional para el rendimiento del loading
+  // Configuración para GitHub Pages
   nitro: {
-    // Configuraciones del servidor si necesitas
+    preset: 'github-pages'
   },
 
-  // Configurar el app para mejor control del loading
-  app: {
-    // Configuraciones globales de la app
-    head: {
-      // Meta tags que pueden afectar la carga
-    }
+  experimental: {
+    payloadExtraction: false
   }
 })
