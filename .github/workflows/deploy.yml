@@ -1,24 +1,18 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches: ['main']
   workflow_dispatch:
 
-# Permisos explícitos más amplios
+# Permisos mínimos necesarios
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
-  actions: read
-  deployments: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,34 +24,15 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Clean install
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install
+      - name: Install dependencies
+        run: npm install
 
-      - name: Generate static site
+      - name: Build project
         run: npm run generate
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          # Habilitar Pages si no está habilitado
-          enablement: true
-          # Token explícito
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: false # Cambiar a tu dominio si tienes uno personalizado
