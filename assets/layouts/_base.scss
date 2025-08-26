@@ -1,0 +1,83 @@
+@use "variables" as *;
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $color-heading;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Texto */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: $color-text;
+}
+
+/* Enlaces */
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+/* Listas */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Botones básicos */
+button {
+  font-family: inherit;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: $color-primary;
+  color: #fff;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $color-accent;
+  }
+}

@@ -1,0 +1,54 @@
+/* ===========================
+   🎨 Colores
+   =========================== */
+
+/* Paleta principal */
+$color-primary: #3B82F6;
+$color-accent: #6366F1;
+$color-secondary: #0EA5E9;
+
+/* Neutros */
+$color-bg: #0F172A;
+$color-surface: #1E293B;
+$color-border: #334155;
+
+/* Texto */
+$color-text: #E2E8F0;
+$color-heading: #F8FAFC;
+$color-muted: #94A3B8;
+
+/* Estados */
+$color-success: #22C55E;
+$color-warning: #FACC15;
+$color-danger:  #EF4444;
+
+
+/* ===========================
+   ✍️ Tipografía
+   =========================== */
+
+/* Tipos de letra */
+$font-primary: 'Inter', sans-serif;
+$font-heading: 'Poppins', sans-serif;
+
+/* Tamaños base */
+$font-size-base: 1rem;    // 16px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.25rem;   // 20px
+
+/* ===========================
+   📐 Espaciado y Layout
+   =========================== */
+
+$container-width: 1200px;
+$spacing-unit: 1rem;      // 16px base
+
+/* ===========================
+   🌑 Sombras y efectos
+   =========================== */
+
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+$radius-md: 8px;
+$radius-lg: 12px;
